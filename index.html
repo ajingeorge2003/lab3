@@ -3,9 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Library Management</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        img {
+            height: 800px;
+            width: 400px;
+        }
+        footer{
+        font-size: larger;
+        text-align: center;
+        padding :50px;
+        color:azure;
+        }
+        footer > a{
+            color: white;
+            font-weight: lighter;
+        }
+        footer > a:hover{
+            color:aquamarine;
+        }
+        section{
+            padding-top:40px;
+            padding-left:50px;
+        }
+    </style>
 </head>
 <body>
-    
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar navbar-dark bg-secondary navbar-expand-lg fixed-top">
+            <div class="container-fluid">
+                <a href="index.html" class="navbar-brand">Bibliotek</a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarNav" aria-expanded="false">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="map.html" class="nav-link">Map</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Carousel -->
+    <main class="bg-secondary text-light mt-5 pt-5">
+        <div id="slideindicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#slideindicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#slideindicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#slideindicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./images/1.jpg" class="d-block w-100" alt="Not found">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Simplify, Organize, and Thrive</h5>
+                        <p>Efficient Library Management System</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/2.jpg" class="d-block w-100" alt="Not found">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Hassle-Free Library</h5>
+                        <p>Streamline Your Library Operations</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/3.jpg" class="d-block w-100" alt="Not found">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>All-in-One Library</h5>
+                        <p>Manage Books, Members, and More</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#slideindicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#slideindicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- Content -->
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <span class="fas fa-book fa-3x"></span>
+                    <h3>Books</h3>
+                    <p>Manage your book collection efficiently.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-users fa-3x"></i>
+                    <h3>Members</h3>
+                    <p>Keep track of member information and activities.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-chart-line fa-3x"></i>
+                    <h3>Reports</h3>
+                    <p>Generate detailed reports on library usage.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Signup Form Section -->
+        <div class="container mt-5">
+            <h2 class="mb-4">Signup Form</h2>
+            <form>
+                <!-- Name Field -->
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                </div>
+                <!-- Email Field -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                </div>
+                <!-- Password Field -->
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                </div>
+                <!-- Submit Button -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#savemodal">Submit</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="savemodal" tabindex="-1" aria-labelledby="modallabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modallabel">Save Changes?</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Confirm to save the details entered?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success">Save Changes</button>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <section class="bg-secondary" style="align-items:center;">
+    <svg style="padding: left 5px;"height="100px" width="100px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
+        <circle style="fill:#D22215;" cx="256" cy="256" r="256"/>
+        <path style="fill:#A81411;" d="M384.857,170.339c-7.677,2.343-15.682,4.356-23.699,6.361
+            c-56.889,12.067-132.741-20.687-165.495,32.754c-27.317,42.494-35.942,95.668-67.017,133.663L294.629,509.1
+            c110.47-16.72,197.773-104.036,214.476-214.511L384.857,170.339z"/>
+        <path style="fill:#FFFFFF;" d="M341.649,152.333H170.351c-33.608,0-60.852,27.245-60.852,60.852v85.632
+            c0,33.608,27.245,60.852,60.852,60.852h171.298c33.608,0,60.852-27.245,60.852-60.852v-85.632
+            C402.501,179.578,375.256,152.333,341.649,152.333L341.649,152.333z M300.494,260.167l-80.12,38.212
+            c-2.136,1.019-4.603-0.536-4.603-2.901v-78.814c0-2.4,2.532-3.955,4.67-2.87l80.12,40.601
+            C302.947,255.602,302.904,259.019,300.494,260.167L300.494,260.167z"/>
+        <path style="fill:#D1D1D1;" d="M341.649,152.333h-87.373v78.605l46.287,23.455c2.384,1.208,2.341,4.624-0.069,5.773l-46.218,22.044
+            v77.459h87.373c33.608,0,60.852-27.245,60.852-60.852v-85.632C402.501,179.578,375.256,152.333,341.649,152.333z"/>
+    </svg><span class="text-light" style="padding-left:20px">Follow us on youtube</span><span style="padding-left:20px"></span>
+    <svg style="padding: left 40px;"height="100px" width="100px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 474.294 474.294" xml:space="preserve">
+        <circle style="fill:#3A5A98;" cx="237.111" cy="236.966" r="236.966"/>
+<path style="fill:#345387;" d="M404.742,69.754c92.541,92.541,92.545,242.586-0.004,335.134
+	c-92.545,92.541-242.593,92.541-335.134,0L404.742,69.754z"/>
+<path style="fill:#2E4D72;" d="M472.543,263.656L301.129,92.238l-88.998,88.998l5.302,5.302l-50.671,50.667l41.474,41.474
+	l-5.455,5.452l44.901,44.901l-51.764,51.764l88.429,88.429C384.065,449.045,461.037,366.255,472.543,263.656z"/>
+<path style="fill:#FFFFFF;" d="M195.682,148.937c0,7.27,0,39.741,0,39.741h-29.115v48.598h29.115v144.402h59.808V237.276h40.134
+	c0,0,3.76-23.307,5.579-48.781c-5.224,0-45.485,0-45.485,0s0-28.276,0-33.231c0-4.962,6.518-11.641,12.965-11.641
+	c6.436,0,20.015,0,32.587,0c0-6.623,0-29.481,0-50.592c-16.786,0-35.883,0-44.306,0C194.201,93.028,195.682,141.671,195.682,148.937
+	z"/>
+    </svg><span class="text-light" style="padding-left:20px">Follow us on Facebook</span><span style="padding-left:20px"></span>
+    </section>
+    <footer class="bg-secondary">&copy;2024 Bibliotek | All rights reserved<br><span class="mail">Let us know your Queries </span><a href="mailto:urbanrentals321@gmail.com">here</a></footer>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
