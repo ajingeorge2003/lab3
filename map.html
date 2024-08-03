@@ -25,6 +25,25 @@
         footer > a:hover{
             color:aquamarine;
         }
+
+        .hover-button {
+        background-color: lawngreen;
+        border: none;
+        color: black;
+        padding: 7px 15px;
+        text-align: center;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 12px;
+        transition-duration: 0.4s; 
+    }
+
+    .hover-button:hover {
+        background-color: white;
+        color: black; 
+        border: 2px solid lawngreen;
+    }
     </style>
 </head>
 <body>
@@ -56,6 +75,13 @@
         <h3>OpenStreetMap</h3>
 
         <h3 class="mt-5">Google Maps</h3>
+
+        <button type="button" button class="hover-button"  onclick="redirect()">see location on google maps</a></button>
+        <script>
+            function redirect(){
+                window.location.href = `https://maps.app.goo.gl/B19eX5sreNyziqws7`
+            }
+        </script>
 
     </main>
 
